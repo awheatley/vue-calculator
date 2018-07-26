@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="wrapper">
+      <Buttons :buttons="buttons" :operators="operators" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Buttons from './components/Buttons.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Buttons
+  },
   data() {
     return {
       buttons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
