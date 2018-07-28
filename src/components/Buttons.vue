@@ -17,6 +17,11 @@
 
 <style lang="scss">
     .calculator {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 3rem auto;
+        max-width: 28rem;
+
         &__button {
             border: none;
             border-radius: 50%;
