@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
-        <button v-for="(button, key) in buttons" :key="button.id">{{ key }}</button>
-        <button>.</button>
-        <button v-for="(operator, key) in operators" :key="operator.id">{{ key }}</button>
-        <button>=</button>
-        <button>C</button>
+    <div class="calculator">
+        <button class="calculator__button" v-for="(button, key) in buttons" :key="button.id">{{ button }}</button>
+        <button class="calculator__button">.</button>
+        <button class="calculator__button" v-for="(operator, key) in operators" :key="operator.id">{{ operator }}</button>
+        <button class="calculator__button">=</button>
+        <button class="calculator__button">C</button>
     </div>
 </template>
 
@@ -13,7 +13,9 @@
         name: 'Button',
         props: ['buttons', 'operators'],
     }
-</script><style lang="scss">
+</script>
+
+<style lang="scss">
     .calculator {
         &__button {
             border: none;
