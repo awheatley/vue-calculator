@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p class="calculation">{{ calculation }}</p>
     <Buttons :buttons="buttons" :operators="operators" />
   </div>
 </template>
