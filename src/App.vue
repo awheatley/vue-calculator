@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div class="wrapper">
-      <Buttons :buttons="buttons" :operators="operators" />
-    </div>
+    <Buttons :buttons="buttons" :operators="operators" />
   </div>
 </template>
 
