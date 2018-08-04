@@ -1,17 +1,41 @@
 <template>
     <div class="calculator">
-        <button class="calculator__button" v-for="(button, key) in buttons" :key="button.id">{{ button }}</button>
-        <button class="calculator__button">.</button>
-        <button class="calculator__button" v-for="(operator, key) in operators" :key="operator.id">{{ operator }}</button>
-        <button class="calculator__button">=</button>
-        <button class="calculator__button">C</button>
+        <button class="calculator__button" 
+                v-for="(button, key) in buttons" 
+                :key="button.id"
+                @click="setNum(button)">{{ button }}
+        </button>
+        <button class="calculator__button" @click="setNum('.')">.</button>
+        <button class="calculator__button" 
+                v-for="(operator, key) in operators" 
+                :key="operator.id" 
+                @click="setOperator(operator)">{{ operator }}</button>
+        <button class="calculator__button" @click="doMath">=</button>
+        <button class="calculator__button" @click="clear">C</button>
     </div>
 </template>
 
 <script>
     export default {
         name: 'Button',
-        props: ['buttons', 'operators'],
+        props: ['buttons', 'operators',],
+        methods: {
+            setNum(val) {
+                this.$emit('setNum', val);
+            },
+
+            setOperator(oper) {
+                this.$emit('setOperator', oper);
+            },
+
+            doMath() {
+                this.$emit('doMath');
+            },
+
+            clear() {
+                this.$emit('clear');
+            }
+        }
     }
 </script>
 
