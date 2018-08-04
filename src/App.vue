@@ -25,6 +25,20 @@ export default {
       val1Str: '',
       val2Str: '',
     }
+  },
+  watch:  {
+    val2Str: function() {
+      return this.calculation = this.val2Str;
+    },
+    
+    val1Str: function() {
+      if (!this.val1Str.length) {
+        return this.calculation = 0; 
+      } else {
+        return this.calculation = this.val1Str;
+      }
+    }
+  },
   }
 }
 </script>
