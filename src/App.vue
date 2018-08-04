@@ -59,6 +59,25 @@ export default {
       }  
     },
     
+    doMath() {
+      this.val1Num = parseFloat(this.val1Str);
+      this.val2Num = parseFloat(this.val2Str);
+      
+      switch(this.operator) {
+        case '+':
+          return this.calculation = this.findSum(this.val1Num, this.val2Num);
+          
+        case '-':
+          return this.calculation = this.findDifference(this.val1Num, this.val2Num);
+          
+        case '*':
+          return this.calculation = this.findProduct(this.val1Num, this.val2Num);
+          
+        case '/':
+          return this.calculation = this.findQuotient(this.val1Num, this.val2Num);
+      }
+    },
+    
     clear() {
       this.calculation = 0;
       this.val1Str = '';
@@ -66,6 +85,21 @@ export default {
       this.operator = null;
     },
     
+    findSum(a, b) {
+      return  a + b;
+    },
+    
+    findDifference(a, b) {
+      return  a - b;
+    },
+    
+    findProduct(a, b) {
+      return  a * b;
+    },
+  
+    findQuotient(a, b) {
+      return  a / b;
+    }
   }
 }
 </script>
