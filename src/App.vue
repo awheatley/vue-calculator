@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <p class="calculation">{{ calculation }}</p>
-    <Buttons :buttons="buttons" :operators="operators" />
+    <Buttons :buttons="buttons" 
+            :operators="operators" 
+            v-on:setNum="setNum($event)" 
+            v-on:setOperator="setOperator($event)" 
+            v-on:doMath="doMath()" 
+            v-on:clear="clear()" />
   </div>
 </template>
 
@@ -16,7 +21,6 @@ export default {
   data() {
     return {
       buttons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-      operators: ['+', '-', '*', '/']
       operators: ['+', '-', '*', '/'],
       calculation: 0,
       operator: null,
