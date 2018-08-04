@@ -39,6 +39,26 @@ export default {
       }
     }
   },
+  methods: {      
+    setNum(val) {
+      if (this.operator !== null) {
+        this.val2Str += val;
+      } else {
+        this.val1Str += val;
+      }
+    },
+    
+    setOperator(val) {
+      if (this.operator === null) {
+          this.operator = val;
+      } else {
+        this.val1Num = this.doMath();
+        this.val2Str = '';
+        this.val1Str = this.val1Num.toString();
+        this.operator = val;
+      }  
+    },
+    
   }
 }
 </script>
