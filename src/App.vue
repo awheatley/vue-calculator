@@ -112,4 +112,15 @@ export default {
   * {
     font-size: 0.625rem;
   }
+
+  .calculation {
+    color: red;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    font-size: 5rem;
+    height: 5rem;
+    line-height: 1.75em;
+    margin: 1rem auto 5rem;
+    text-align: center;
+    width: 40%;
+  }
 </style>
