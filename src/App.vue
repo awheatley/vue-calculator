@@ -59,6 +59,13 @@ export default {
       }  
     },
     
+    clear() {
+      this.calculation = 0;
+      this.val1Str = '';
+      this.val2Str = '';
+      this.operator = null;
+    },
+    
   }
 }
 </script>
